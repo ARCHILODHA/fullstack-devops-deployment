@@ -1,0 +1,16 @@
+
+# Query Optimization
+
+Efficient queries improve application speed.
+
+## Best Practices
+- Use indexes
+- Avoid SELECT *
+- Limit returned rows
+- Analyze execution plans
+
+## Example
+```sql
+SELECT name,email
+FROM users
+WHERE id = 10;
