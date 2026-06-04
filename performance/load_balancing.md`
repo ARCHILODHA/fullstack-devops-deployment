@@ -1,0 +1,13 @@
+# Load Balancing
+
+Load balancing distributes traffic across servers.
+
+## Advantages
+- High availability
+- Better fault tolerance
+- Improved scalability
+
+## Types
+- Round Robin
+- Least Connections
+- IP Hash
