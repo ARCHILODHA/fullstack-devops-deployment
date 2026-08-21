@@ -1,0 +1,27 @@
+
+# Cache-Aside Pattern
+
+## Overview
+
+The Cache-Aside pattern is one of the most commonly used caching strategies.
+
+The application is responsible for loading data into the cache.
+
+## Read Flow
+
+```text
+Client
+   |
+Application
+   |
+Check Cache
+   |
+   +---- Hit ----> Return Data
+   |
+   +---- Miss
+          |
+       Database
+          |
+       Store in Cache
+          |
+       Return Data
