@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: fullstack-app-config
+  namespace: production
+
+data:
+  APP_ENV: "production"
+
+  SERVER_PORT: "8080"
+
+  LOG_LEVEL: "INFO"
+
+  DATABASE_HOST: "postgres-service"
+
+  DATABASE_PORT: "5432"
+
+  DATABASE_NAME: "fullstack_db"
+
+  REDIS_HOST: "redis-service"
+
+  REDIS_PORT: "6379"
+
+  CACHE_TTL: "600"
+
+  JAVA_OPTS: "-Xms256m -Xmx512m"
