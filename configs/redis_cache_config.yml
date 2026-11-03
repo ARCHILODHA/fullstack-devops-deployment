@@ -1,0 +1,33 @@
+redis:
+  host: ${REDIS_HOST:localhost}
+  port: ${REDIS_PORT:6379}
+  password: ${REDIS_PASSWORD:}
+  database: 0
+
+  timeout: 3000
+
+  pool:
+    max-active: 20
+    max-idle: 10
+    min-idle: 2
+    max-wait: 2000
+
+cache:
+  default-ttl: 600
+
+  regions:
+    users:
+      ttl: 300
+
+    products:
+      ttl: 900
+
+    sessions:
+      ttl: 1800
+
+    reports:
+      ttl: 3600
+
+  key-prefix: "fullstack:"
+
+  null-values: false
