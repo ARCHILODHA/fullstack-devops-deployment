@@ -1,0 +1,47 @@
+server:
+  port: 8080
+  shutdown: graceful
+
+spring:
+  application:
+    name: fullstack-app
+
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+
+    properties:
+      hibernate:
+        format_sql: false
+
+  lifecycle:
+    timeout-per-shutdown-phase: 30s
+
+logging:
+  level:
+    root: WARN
+    org.springframework: ERROR
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+
+  endpoint:
+    health:
+      show-details: never
